@@ -35,6 +35,10 @@ const SidebarOptionsContainer = styled.div`
         margin-left: 20px;
         font-size: 14px;
     }
+
+    & > h4 {
+        margin-left: 10px;
+    }
 `;
 
 export default SidebarOptions

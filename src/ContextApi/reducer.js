@@ -5,8 +5,8 @@ export const initialState = {
     playing: false,
     item: null,
     //Change back to null later
-    // token: 'vi9uoivmij00m7f8m6m65y2vi',
-    token: null,
+    token: 'vi9uoivmij00m7f8m6m65y2vi',
+    // token: null,
 }
 
 export const reducer = (state, action) => {
@@ -30,6 +30,12 @@ export const reducer = (state, action) => {
                 ...state,
                 playlists: action.playlists,
             };
+
+        case 'SET_ON_REPEAT': 
+            return {
+                ...state,
+                on_repeat: action.on_repeat,
+            }
 
         default:
             return state;
