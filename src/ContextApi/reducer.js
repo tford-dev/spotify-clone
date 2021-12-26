@@ -5,8 +5,8 @@ export const initialState = {
     playing: false,
     item: null,
     //Change back to null later
-    token: 'vi9uoivmij00m7f8m6m65y2vi',
-    // token: null,
+    // token: 'vi9uoivmij00m7f8m6m65y2vi',
+    token: null,
 }
 
 export const reducer = (state, action) => {

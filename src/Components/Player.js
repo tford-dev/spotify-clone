@@ -4,13 +4,13 @@ import Sidebar from './Sidebar';
 import Body from './Body';
 import Footer from './Footer';
 
-const Player = (spotify) => {
+const Player = ({spotify}) => {
     return (
         <PlayerContainer>
             {/*Holds Sidebar and Body*/}
             <PlayerBody>
                 <Sidebar />
-                <Body />
+                <Body spotify={spotify} />
             </PlayerBody>
             <Footer />
         </PlayerContainer>

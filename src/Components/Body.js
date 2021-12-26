@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import styled from "styled-components";
+import Header from "./Header.js";
 
-const Body = () => {
+const Body = ({spotify}) => {
     return (
         <BodyContainer>
-            <h1>Body</h1>
+            {/*Prop drilling*/}
+            <Header spotify={spotify} />
         </BodyContainer>
     )
 };
