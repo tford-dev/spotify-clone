@@ -11,8 +11,7 @@ import './App.css';
 const spotify = new SpotifyWebApi();
 
 function App() {
-	const [token, setToken] = useState(null);
-	const [{}, dispatch] = useStateValue();
+	const [{ user, token }, dispatch] = useStateValue();
 
 	useEffect(() => {
 		const hash = getTokenFromResponse();
@@ -22,17 +21,27 @@ function App() {
 		const _token = hash.access_token;
 
 		if(_token){
-			setToken(_token)
-			
 			//passes token to spotify API so App has permission for requests
 			spotify.setAccessToken(_token);
 
+			dispatch({
+				type: "SET_TOKEN",
+				token: _token,
+			})
+
 			//Test to see if App is authorized
 			spotify.getMe().then((user) => {
-				console.log(user);
-			})
+				dispatch({
+					type: 'SET_USER',
+					user: user
+				});
+			});
 		};
 	}, [])
+
+	console.log(user);
+	console.log(token);
+
 	return (
 		<div className="App">
 			{
