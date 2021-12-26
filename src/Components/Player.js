@@ -1,16 +1,28 @@
 import React from 'react'
 import styled from "styled-components";
+import Sidebar from './Sidebar';
+import Body from './Body';
+import Footer from './Footer';
 
-const Player = () => {
+const Player = (spotify) => {
     return (
         <PlayerContainer>
-            <h1>Save Me</h1>
+            {/*Holds Sidebar and Body*/}
+            <PlayerBody>
+                <Sidebar />
+                <Body />
+            </PlayerBody>
+            <Footer />
         </PlayerContainer>
     )
 };
 
 const PlayerContainer = styled.div`
 
+`;
+
+const PlayerBody = styled.div`
+    display: flex;
 `;
 
 export default Player

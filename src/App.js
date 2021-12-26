@@ -39,15 +39,13 @@ function App() {
 		};
 	}, [])
 
-	console.log(user);
-	console.log(token);
-
 	return (
 		<div className="App">
 			{
 				//ternary conditional for rendering based off of token's state
 				token ? (
-					<Player />
+					//Passes spotify API as an argument
+					<Player spotify={spotify} />
 				) : (
 					<Login />
 				)
