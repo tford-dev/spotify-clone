@@ -36,6 +36,14 @@ function App() {
 					user: user
 				});
 			});
+
+			//Grabs playlists from API and dispatches them to state
+			spotify.getUserPlaylists().then((playlists)=> {
+				dispatch({
+					type: "SET_PLAYLISTS",
+					playlists: playlists,
+				});
+			});
 		};
 	}, [])
 
