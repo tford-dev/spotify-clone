@@ -1,3 +1,8 @@
+/*Hides visibility of scroll bar but scrollbar is still functional*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
 }
