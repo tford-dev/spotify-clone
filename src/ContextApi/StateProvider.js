@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {createContext, useContext, useReducer} from "react";
 
 //Prepares state

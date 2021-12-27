@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState} from 'react';
 import styled from "styled-components";
 import { useStateValue } from '../ContextApi/StateProvider';
@@ -6,7 +7,7 @@ import "./icons.css";
 //Props passed down from Body.js
 const SongRow = ({track, trackKey}) => {
     const [active, setActive] = useState(0);
-    const [{ songArtists, songName, songImg, activeIndex}, dispatch] = useStateValue();
+    const [{activeIndex}, dispatch] = useStateValue();
 
     const isActive = (index) => {
         setActive(index);

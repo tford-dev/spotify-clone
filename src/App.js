@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable */
+import React, { useEffect} from 'react'
 import Login from './Components/Login';
 import Player from './Components/Player';
 import {getTokenFromResponse} from './spotify';
@@ -10,7 +11,7 @@ import './App.css';
 //Responsible for any interaction between app and spotify API
 const spotify = new SpotifyWebApi();
 function App() {
-	const [{ user, token }, dispatch] = useStateValue();
+	const [{ token }, dispatch] = useStateValue();
 
 	useEffect(() => {
 		const hash = getTokenFromResponse();

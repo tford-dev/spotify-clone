@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+/* eslint-disable */
+import React from 'react';
 import styled from "styled-components";
 import Header from "./Header.js";
 import { useStateValue } from '../ContextApi/StateProvider.js';
@@ -11,7 +12,7 @@ import SongRow from './SongRow';
 
 const Body = ({spotify}) => {
     //Grabs on_repeat from state
-    const [{on_repeat}, dispatch] = useStateValue();
+    const [{on_repeat}] = useStateValue();
 
     return (
         <BodyContainer>

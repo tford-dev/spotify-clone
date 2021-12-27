@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useEffect, useState} from 'react';
 import {useStateValue} from "../ContextApi/StateProvider"
 import styled from 'styled-components';
