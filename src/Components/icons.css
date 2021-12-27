@@ -25,6 +25,10 @@ a{
     opacity: 0.8;
 }
 
+.body__active h1 {
+    color: #1ed15e;
+}
+
 /*FOOTER COMPONENT*/
 .footer__green {
     color: #1ed15e;
