@@ -1,7 +1,7 @@
 //https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
 //38bbf18b772444b8b19c7c9b270d341f
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "https://61ca093d1fd3341567318aff--tford-dev-spotify.netlify.app/";
+const redirectUri = window.location;
 //id given by spotify for developers link
 const clientId = "38bbf18b772444b8b19c7c9b270d341f";
 
