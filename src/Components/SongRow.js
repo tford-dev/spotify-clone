@@ -1,11 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react';
 import styled from "styled-components";
+import { useStateValue } from '../ContextApi/StateProvider';
 import "./icons.css";
 
 //Props passed down from Body.js
-const SongRow = ({track}) => {
+const SongRow = ({track, trackKey}) => {
+    const [active, setActive] = useState(0);
+    const [{ songArtists, songName, songImg, activeIndex}, dispatch] = useStateValue();
+
+    const isActive = (index) => {
+        setActive(index);
+    }
+
+    const setPlayState = (trackIndex) =>{
+        dispatch({
+            type: 'SET_PLAY',
+            songName: track.name,
+            songImg: track.album.images[0].url,
+            songArtists: track.artists.map((artist) => artist.name).join(", "),
+		});
+
+        dispatch({
+            type: 'SET_ACTIVE',
+            activeIndex: trackIndex
+        })
+        isActive(trackIndex)
+    }
+
     return (
-        <SongRowContainer>
+        <SongRowContainer 
+            onClick={()=> setPlayState(trackKey)}
+            className={activeIndex === trackKey ? 'body__active' : ''} 
+        >
             <img className="songRow__album" src={track.album.images[0].url} alt={track.name}/>
             <SongRowInfo>
                 <h1>{track.name}</h1>

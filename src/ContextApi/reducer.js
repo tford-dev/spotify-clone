@@ -7,6 +7,10 @@ export const initialState = {
     //Change back to null later
     // token: 'vi9uoivmij00m7f8m6m65y2vi',
     token: null,
+    songName: null,
+    songImg: null,
+    songArtists: null,
+    activeIndex: null
 }
 
 export const reducer = (state, action) => {
@@ -35,6 +39,18 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 on_repeat: action.on_repeat,
+            };
+        case 'SET_PLAY':
+            return {
+                ...state,
+                songName: action.songName,
+                songImg: action.songImg,
+                songArtists: action.songArtists
+            }
+        case 'SET_ACTIVE':
+            return {
+                ...state, 
+                activeIndex: action.activeIndex
             }
 
         default:

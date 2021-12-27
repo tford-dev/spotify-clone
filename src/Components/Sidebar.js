@@ -21,8 +21,8 @@ const Sidebar = () => {
             <hr />
             {
                 //Maps and displays playlists IF there are playlists and IF there are songs in the playlists.
-                playlists?.items?.map((playlist)=>(
-                    <SidebarOptions title={playlist.name} />
+                playlists?.items?.map((playlist, i)=>(
+                    <SidebarOptions title={playlist.name} key={i} />
                 ))}
         </SidebarContainer>
     );

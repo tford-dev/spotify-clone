@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import Header from "./Header.js";
 import { useStateValue } from '../ContextApi/StateProvider.js';
@@ -12,6 +12,7 @@ import SongRow from './SongRow';
 const Body = ({spotify}) => {
     //Grabs on_repeat from state
     const [{on_repeat}, dispatch] = useStateValue();
+
     return (
         <BodyContainer>
             {/*Prop drilling*/}
@@ -21,9 +22,9 @@ const Body = ({spotify}) => {
                 <img src={on_repeat?.images[0].url} alt="playlist" />
                 <BodyInfoText>
                     <strong>PLAYLIST</strong>
-                    <h2>On Repeat</h2>
+                    <h2>{on_repeat?.name}</h2>
                     {/*If on_repeat state is filled, display description*/}
-                    <p>{on_repeat?.description}</p>
+                    <p dangerouslySetInnerHTML={{__html: on_repeat?.description}}></p>
                 </BodyInfoText>
             </BodyInfo>
 
@@ -35,9 +36,12 @@ const Body = ({spotify}) => {
                 </BodyIcons>
 
                 {/*If there are songs in the playlist, map through items array and display tracks*/}
-                {on_repeat?.tracks.items.map((item) =>(
-                    console.log(item.track),
-                    <SongRow track={item.track} key={item.track.id}/>
+                {on_repeat?.tracks.items.map((item, i) =>(
+                    <SongRow 
+                        track={item.track}
+                        trackKey={i} 
+                        key={i} 
+                    />
                 ))}
             </BodySongs>
         </BodyContainer>

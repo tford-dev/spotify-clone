@@ -1,4 +1,8 @@
 /*BODY COMPONENT*/
+a{
+    color: #fff;
+}
+
 .body__shuffle {
     font-size: 80px !important;
     margin-left: 50px;
@@ -14,6 +18,11 @@
 
 .body__songIcon {
     margin-right: 20px;
+}
+
+.body__active {
+    background-color: black;
+    opacity: 0.8;
 }
 
 /*FOOTER COMPONENT*/

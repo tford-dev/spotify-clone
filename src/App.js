@@ -9,7 +9,6 @@ import './App.css';
 
 //Responsible for any interaction between app and spotify API
 const spotify = new SpotifyWebApi();
-
 function App() {
 	const [{ user, token }, dispatch] = useStateValue();
 
@@ -29,6 +28,11 @@ function App() {
 				token: _token,
 			})
 
+			dispatch({
+				type: "SET_ACTIVE",
+				activeIndex: 0
+			})
+
 			//Test to see if App is authorized
 			spotify.getMe().then((user) => {
 				dispatch({
@@ -45,12 +49,20 @@ function App() {
 				});
 			});
 
-			spotify.getPlaylist('37i9dQZF1Epxik6wQlubao').then(response =>{
+			spotify.getPlaylist('37i9dQZF1DX91oIci4su1D').then(response =>{
 				dispatch({
 					type: "SET_ON_REPEAT",
 					on_repeat: response,
-				})
-			})
+				});
+
+				dispatch({
+					type: 'SET_PLAY',
+					songName: response.tracks.items[0].track.name,
+					songImg: response.tracks.items[0].track.album.images[0].url,
+					songArtists: response.tracks.items[0].track.artists[0].name
+					// songArtists: response.tracks.items[0].track.artists.map((artist) => artist.name).join(", ") -" "
+				});
+			});
 		};
 	}, [])
 

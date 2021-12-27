@@ -12,7 +12,7 @@ const Player = ({spotify}) => {
                 <Sidebar />
                 <Body spotify={spotify} />
             </PlayerBody>
-            <Footer />
+            <Footer spotify={spotify} />
         </PlayerContainer>
     )
 };

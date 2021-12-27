@@ -14,13 +14,14 @@ import {Grid, Slider} from "@material-ui/core";
 import "./icons.css";
 
 const Footer = () => {
+    const [{ songArtists, songName, songImg }, dispatch] = useStateValue();
     return (
         <FooterContainer>
             <FooterLeft>
-                <img src="https://upload.wikimedia.org/wikipedia/en/0/01/Suicide_Silence_-_The_Cleansing.jpg" alt="" />
+                <img src={songImg} alt="" />
                 <FooterSongInfo>
-                    <h4>Unanswered</h4>
-                    <p>Suicide Silence</p>
+                    <h4>{songName}</h4>
+                    <p>{songArtists}</p>
                 </FooterSongInfo>
             </FooterLeft>
 
