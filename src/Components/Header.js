@@ -17,12 +17,11 @@ const Header = () => {
                     type='text'
                 />
             </HeaderLeft>
+            <HeaderRight>
                 {/*IF there is a user signed in, display their profile pic url as src, otherwise display user name for alt*/}
                 <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
                 {/*IF there is a user signed in, display their name.*/}
                 <h4>{user?.display_name}</h4>
-            <HeaderRight>
-            
             </HeaderRight>
         </HeaderContainer>
     )

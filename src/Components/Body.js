@@ -2,6 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import Header from "./Header.js";
 import { useStateValue } from '../ContextApi/StateProvider.js';
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+//Main purpose of css file is to style icons
+import './icons.css';
+import SongRow from './SongRow';
 
 const Body = ({spotify}) => {
     //Grabs on_repeat from state
@@ -23,8 +29,16 @@ const Body = ({spotify}) => {
 
             <BodySongs>
                 <BodyIcons>
-                
+                    <PlayCircleFilledIcon className="body__shuffle body__songIcon" />
+                    <FavoriteIcon className="body__songIcon" fontSize="large"/>
+                    <MoreHorizIcon className="body__songIcon" />
                 </BodyIcons>
+
+                {/*If there are songs in the playlist, map through items array and display tracks*/}
+                {on_repeat?.tracks.items.map((item) =>(
+                    console.log(item.track),
+                    <SongRow track={item.track} key={item.track.id}/>
+                ))}
             </BodySongs>
         </BodyContainer>
     )
@@ -38,8 +52,15 @@ const BodyContainer = styled.div`
     flex: 0.8;
     height: 100vh;
     color: #fff;
+    /*Allows user to scrow through songs within dom*/
+    overflow-y: overlay;
     //Purplish to black
     background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
+
+    //hides scroll bar but keeps functionality with mouse/touch
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const BodyInfo = styled.div`
@@ -68,11 +89,15 @@ const BodyInfoText = styled.div`
 `;
 
 const BodySongs = styled.div`
-
+    margin: 20px -30px;
 `;
 
 const BodyIcons = styled.div`
-
+    display: flex;
+    align-items: center;
+    & > .MuiSvgIcons-root {
+        margin-right: 20px;
+    }
 `;
 
 export default Body

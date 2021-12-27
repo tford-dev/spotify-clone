@@ -10,8 +10,8 @@ import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import {Grid, Slider} from "@material-ui/core";
-//Footer.css is mainly for styling icons
-import "./Footer.css";
+//icons.css is mainly for styling icons
+import "./icons.css";
 
 const Footer = () => {
     return (
@@ -56,7 +56,7 @@ const FooterContainer = styled.div`
     //Keeps footer at bottom of page
     bottom: 0;
     height: 65px;
-    width: 97%;
+    width: 98%;
     background-color: #282828;
     padding: 20px;
 `;

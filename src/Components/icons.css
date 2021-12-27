@@ -1,0 +1,38 @@
+/*BODY COMPONENT*/
+.body__shuffle {
+    font-size: 80px !important;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.body__shuffle:hover {
+    transition: 100ms transform ease-in;
+    /*Grows 8%*/
+    transform: scale(1.08);
+}
+
+.body__songIcon {
+    margin-right: 20px;
+}
+
+/*FOOTER COMPONENT*/
+.footer__green {
+    color: #1ed15e;
+}
+
+.footer__icon:hover, .footer__green:hover {
+    transition: transform 0.2s ease-in-out;
+    /*Grows 20%*/
+    transform: scale(1.2) !important;
+}
+
+* .MuiSlider-root {
+    color: green;
+}
+
+/*SONGROW COMPONENT*/
+.songRow__album{
+    height: 40px;
+    width: 40px;
+}
