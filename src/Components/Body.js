@@ -94,6 +94,7 @@ const BodyInfoText = styled.div`
 
 const BodySongs = styled.div`
     margin: 20px -30px;
+    margin-bottom: 100px;
 `;
 
 const BodyIcons = styled.div`
